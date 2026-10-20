@@ -1,0 +1,10 @@
+**/node_modules
+**/dist
+**/data
+**/uploads
+.git/
+.vibeflow/
+docs/
+*.md
+Dockerfile
+podman-compose.preview.vibeflow.yaml
