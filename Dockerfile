@@ -6,7 +6,8 @@ COPY server/package.json server/package-lock.json ./server/
 RUN cd server && npm_config_build_from_source=true npm install --omit=dev
 
 COPY client/package.json client/package-lock.json ./client/
-RUN cd client && npm install
+# vite is a devDependency, so force dev deps even if the build env sets NODE_ENV=production
+RUN cd client && npm ci --include=dev
 
 COPY . .
 
